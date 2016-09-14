@@ -177,9 +177,9 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
             return
             
         // if pushed in a navigation controller
-        } else if navigationController != nil {
+        } else if let navigationController = navigationController {
         
-            navigationController?.popViewController(animated: animateOnDismiss)
+            navigationController.popViewController(animated: animateOnDismiss)
         }
         
         dismissCompletionCallback?()
