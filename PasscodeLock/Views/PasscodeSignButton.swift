@@ -50,7 +50,7 @@ open class PasscodeSignButton: UIButton {
         setupActions()
     }
     
-    open override func intrinsicContentSize() -> CGSize {
+    open override var intrinsicContentSize: CGSize {
         
         return CGSize(width: 60, height: 60)
     }

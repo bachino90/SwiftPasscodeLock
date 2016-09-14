@@ -50,7 +50,7 @@ open class PasscodeSignPlaceholderView: UIView {
         super.init(coder: aDecoder)
     }
 
-    open override func intrinsicContentSize() -> CGSize {
+    open override var intrinsicContentSize: CGSize {
         
         return CGSize(width: 16, height: 16)
     }
