@@ -105,8 +105,8 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
 
         cancelButton?.isHidden = !passcodeLock.state.isCancellableAction
         touchIDButton?.isHidden = !passcodeLock.isTouchIDAllowed
-        cancelButton?.setTitle(localizedStringFor("PasscodeLockCancelButton", comment: "Cancel"), forState: .normal)
-        deleteSignButton?.setTitle(localizedStringFor("PasscodeLockDeleteButton", comment: "Delete"), forState: .normal)
+        cancelButton?.setTitle(localizedStringFor("PasscodeLockCancelButton", comment: "Cancel"), for: .normal)
+        deleteSignButton?.setTitle(localizedStringFor("PasscodeLockDeleteButton", comment: "Delete"), for: .normal)
     }
     
     // MARK: - Events
@@ -123,7 +123,7 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
     }
     
     open func appWillEnterForegroundHandler(_ notification: Notification) {
-        
+
         authenticateWithBiometrics()
     }
     
