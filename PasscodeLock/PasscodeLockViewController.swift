@@ -102,14 +102,16 @@ open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegat
         
         titleLabel?.text = passcodeLock.state.title
         descriptionLabel?.text = passcodeLock.state.description
+
         cancelButton?.isHidden = !passcodeLock.state.isCancellableAction
         touchIDButton?.isHidden = !passcodeLock.isTouchIDAllowed
+        cancelButton?.setTitle(localizedStringFor("PasscodeLockCancelButton", comment: "Cancel"), forState: .normal)
+        deleteSignButton?.setTitle(localizedStringFor("PasscodeLockDeleteButton", comment: "Delete"), forState: .normal)
     }
     
     // MARK: - Events
     
     fileprivate func setupEvents() {
-        
         notificationCenter?.addObserver(self, selector: #selector(PasscodeLockViewController.appWillEnterForegroundHandler(_:)), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
         notificationCenter?.addObserver(self, selector: #selector(PasscodeLockViewController.appDidEnterBackgroundHandler(_:)), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
     }
