@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,24 +24,28 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wK-Ol-7mm">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wK-Ol-7mm">
+                    <frame key="frameInset" minX="141.5" minY="80" width="37" height="23"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbT-GO-CPk">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbT-GO-CPk">
+                    <frame key="frameInset" minX="120.5" minY="107" width="79" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-lo-9Jb" userLabel="Placeholders">
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w14-Kb-Jnf" userLabel="Placeholder 1" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
-                            <frame key="frameInset" width="16" height="16"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w14-Kb-Jnf" userLabel="Placeholder 1" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="w14-Kb-Jnf" secondAttribute="height" multiplier="1:1" id="td4-re-8Jg"/>
+                            </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
                                     <color key="value" red="0.95294117647058818" green="0.4823529411764706" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,9 +58,11 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSf-H5-f20" userLabel="Placeholder 2" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
-                            <frame key="frameInset" minX="26" width="16" height="16"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSf-H5-f20" userLabel="Placeholder 2" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="OSf-H5-f20" secondAttribute="height" multiplier="1:1" id="rAl-1b-kbE"/>
+                            </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
                                     <color key="value" red="0.95294117649999999" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,9 +75,11 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Tg-dE-gH4" userLabel="Placeholder 3" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
-                            <frame key="frameInset" minX="52" width="16" height="16"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Tg-dE-gH4" userLabel="Placeholder 3" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="9Tg-dE-gH4" secondAttribute="height" multiplier="1:1" id="5PJ-Hi-0jj"/>
+                            </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
                                     <color key="value" red="0.95294117649999999" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,9 +92,11 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fhs-1e-Ysl" userLabel="Placeholder 4" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
-                            <frame key="frameInset" minX="78" width="16" height="16"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fhs-1e-Ysl" userLabel="Placeholder 4" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Fhs-1e-Ysl" secondAttribute="height" multiplier="1:1" id="mf6-2s-P4U"/>
+                            </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
                                     <color key="value" red="0.95294117649999999" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -104,13 +115,18 @@
                         <constraint firstItem="w14-Kb-Jnf" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="top" id="00q-SK-ilE"/>
                         <constraint firstAttribute="height" constant="16" id="0rg-FM-kVz"/>
                         <constraint firstItem="9Tg-dE-gH4" firstAttribute="leading" secondItem="OSf-H5-f20" secondAttribute="trailing" constant="10" id="33P-aQ-rnf"/>
-                        <constraint firstItem="OSf-H5-f20" firstAttribute="top" secondItem="w14-Kb-Jnf" secondAttribute="top" id="6eg-Qv-82V"/>
+                        <constraint firstAttribute="bottom" secondItem="9Tg-dE-gH4" secondAttribute="bottom" id="4uy-d4-tcs"/>
                         <constraint firstAttribute="width" constant="94" id="8aU-sn-a0U"/>
+                        <constraint firstAttribute="bottom" secondItem="w14-Kb-Jnf" secondAttribute="bottom" id="Aio-k6-6CC"/>
+                        <constraint firstItem="9Tg-dE-gH4" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="top" id="JSc-cH-7zW"/>
                         <constraint firstItem="Fhs-1e-Ysl" firstAttribute="leading" secondItem="9Tg-dE-gH4" secondAttribute="trailing" constant="10" id="LwK-gY-EaT"/>
-                        <constraint firstItem="9Tg-dE-gH4" firstAttribute="top" secondItem="OSf-H5-f20" secondAttribute="top" id="MnB-bE-r8B"/>
-                        <constraint firstItem="Fhs-1e-Ysl" firstAttribute="top" secondItem="9Tg-dE-gH4" secondAttribute="top" id="O8I-hs-q0Y"/>
+                        <constraint firstAttribute="bottom" secondItem="Fhs-1e-Ysl" secondAttribute="bottom" id="PU9-OS-8mq"/>
                         <constraint firstItem="OSf-H5-f20" firstAttribute="leading" secondItem="w14-Kb-Jnf" secondAttribute="trailing" constant="10" id="dde-Fn-Mzf"/>
+                        <constraint firstAttribute="bottom" secondItem="OSf-H5-f20" secondAttribute="bottom" id="fyU-Be-1tE"/>
+                        <constraint firstAttribute="trailing" secondItem="Fhs-1e-Ysl" secondAttribute="trailing" id="n0K-YC-VJZ"/>
                         <constraint firstItem="w14-Kb-Jnf" firstAttribute="leading" secondItem="HcN-lo-9Jb" secondAttribute="leading" id="pkT-HZ-TAQ"/>
+                        <constraint firstItem="Fhs-1e-Ysl" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="top" id="x8O-s4-NL3"/>
+                        <constraint firstItem="OSf-H5-f20" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="top" id="xOD-wv-opQ"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-dj-v7R" userLabel="TouchID Button">
@@ -390,10 +406,11 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.0" green="0.12549019610000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="0CR-0R-0Nr" firstAttribute="centerY" secondItem="etg-x7-Mx1" secondAttribute="centerY" id="3aW-Gh-ixf"/>
                         <constraint firstItem="cuq-ue-Jyj" firstAttribute="top" secondItem="4Lm-fm-ebj" secondAttribute="top" id="5cV-lf-VPE"/>
+                        <constraint firstAttribute="height" priority="800" constant="316" id="7KD-m6-L9u"/>
                         <constraint firstItem="RA8-jd-dag" firstAttribute="width" secondItem="cuq-ue-Jyj" secondAttribute="width" id="7bh-5S-wdh"/>
                         <constraint firstItem="PbJ-Y8-MMf" firstAttribute="width" secondItem="cuq-ue-Jyj" secondAttribute="width" id="7pP-vP-qLW"/>
                         <constraint firstItem="0CR-0R-0Nr" firstAttribute="centerX" secondItem="PbJ-Y8-MMf" secondAttribute="centerX" id="8qe-Gr-VFK"/>
@@ -423,7 +440,7 @@
                         <constraint firstItem="etg-x7-Mx1" firstAttribute="top" secondItem="RA8-jd-dag" secondAttribute="bottom" constant="12" id="cBz-sX-GbL"/>
                         <constraint firstItem="RR4-5o-pli" firstAttribute="height" secondItem="cuq-ue-Jyj" secondAttribute="height" id="d8a-I9-iYa"/>
                         <constraint firstItem="etg-x7-Mx1" firstAttribute="width" secondItem="cuq-ue-Jyj" secondAttribute="width" id="fOd-wI-oVM"/>
-                        <constraint firstAttribute="width" constant="260" id="fee-29-pLl"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="fee-29-pLl"/>
                         <constraint firstItem="C9Z-3u-ohd" firstAttribute="width" secondItem="cuq-ue-Jyj" secondAttribute="width" id="gPQ-O6-dXl"/>
                         <constraint firstItem="EUD-XB-0CR" firstAttribute="centerX" secondItem="WDx-aD-wJK" secondAttribute="centerX" id="ibi-Xl-KOu"/>
                         <constraint firstItem="CGh-ph-49t" firstAttribute="height" secondItem="cuq-ue-Jyj" secondAttribute="height" id="k6L-wA-4si"/>
@@ -446,10 +463,12 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="4Lm-fm-ebj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1A8-I4-z2G"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Lm-fm-ebj" secondAttribute="trailing" constant="40" id="3zS-qk-Ayl"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-16" id="BIJ-v9-DKU"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="bottom" secondItem="HbT-GO-CPk" secondAttribute="top" constant="-4" id="F4T-j8-jQJ"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="FUQ-Nh-ox9"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4Lm-fm-ebj" secondAttribute="bottom" constant="20" id="FvQ-t0-Uxy"/>
+                <constraint firstItem="4Lm-fm-ebj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="IH9-mf-zuv"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="bottom" secondItem="HcN-lo-9Jb" secondAttribute="top" constant="-16" id="OLY-LF-tHd"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Qup-3g-Gux"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="16" id="RDw-W3-MpZ"/>

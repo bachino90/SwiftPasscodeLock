@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 public class PasscodeSignButton: UIButton {
     
     @IBInspectable
