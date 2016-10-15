@@ -142,7 +142,7 @@
                     </subviews>
                     <color key="backgroundColor" red="0.1058823529" green="0.1058823529" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="140" id="EcI-hK-csr"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="140" id="EcI-hK-csr"/>
                         <constraint firstItem="HcN-lo-9Jb" firstAttribute="top" secondItem="HbT-GO-CPk" secondAttribute="bottom" constant="12" id="KEd-Tf-jjt"/>
                         <constraint firstItem="HbT-GO-CPk" firstAttribute="centerY" secondItem="vAP-2b-B9v" secondAttribute="centerY" constant="12" id="OSY-Du-rgs"/>
                         <constraint firstItem="1wK-Ol-7mm" firstAttribute="centerX" secondItem="HbT-GO-CPk" secondAttribute="centerX" id="U3c-SH-fu3"/>
@@ -483,6 +483,7 @@
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4Lm-fm-ebj" secondAttribute="bottom" constant="20" id="FvQ-t0-Uxy"/>
                 <constraint firstItem="4Lm-fm-ebj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="900" constant="40" id="IH9-mf-zuv"/>
                 <constraint firstItem="vAP-2b-B9v" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LX8-0V-Ejj"/>
+                <constraint firstItem="4Lm-fm-ebj" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" priority="800" id="Tyf-y4-z0r"/>
                 <constraint firstAttribute="trailing" secondItem="vAP-2b-B9v" secondAttribute="trailing" id="Vsw-nC-bHy"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i6j-iI-02e"/>
                 <constraint firstItem="vAP-2b-B9v" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mac-8T-mWx"/>
