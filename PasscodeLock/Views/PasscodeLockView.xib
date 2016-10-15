@@ -24,7 +24,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-dj-v7R" userLabel="TouchID Button">
@@ -454,7 +454,7 @@
                         <constraint firstItem="etg-x7-Mx1" firstAttribute="top" secondItem="RA8-jd-dag" secondAttribute="bottom" constant="12" id="cBz-sX-GbL"/>
                         <constraint firstItem="RR4-5o-pli" firstAttribute="height" secondItem="cuq-ue-Jyj" secondAttribute="height" id="d8a-I9-iYa"/>
                         <constraint firstItem="etg-x7-Mx1" firstAttribute="width" secondItem="cuq-ue-Jyj" secondAttribute="width" id="fOd-wI-oVM"/>
-                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="fee-29-pLl"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="260" id="fee-29-pLl"/>
                         <constraint firstItem="C9Z-3u-ohd" firstAttribute="width" secondItem="cuq-ue-Jyj" secondAttribute="width" id="gPQ-O6-dXl"/>
                         <constraint firstItem="EUD-XB-0CR" firstAttribute="centerX" secondItem="WDx-aD-wJK" secondAttribute="centerX" id="ibi-Xl-KOu"/>
                         <constraint firstItem="CGh-ph-49t" firstAttribute="height" secondItem="cuq-ue-Jyj" secondAttribute="height" id="k6L-wA-4si"/>
