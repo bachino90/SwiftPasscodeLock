@@ -24,7 +24,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-dj-v7R" userLabel="TouchID Button">
@@ -477,11 +477,11 @@
             <color key="backgroundColor" red="0.1058823529" green="0.1058823529" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="4Lm-fm-ebj" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1A8-I4-z2G"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Lm-fm-ebj" secondAttribute="trailing" constant="40" id="3zS-qk-Ayl"/>
+                <constraint firstAttribute="trailing" secondItem="4Lm-fm-ebj" secondAttribute="trailing" priority="900" constant="40" id="3zS-qk-Ayl"/>
                 <constraint firstItem="4Lm-fm-ebj" firstAttribute="top" secondItem="vAP-2b-B9v" secondAttribute="bottom" constant="1" id="6No-WT-yfT"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-16" id="BIJ-v9-DKU"/>
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4Lm-fm-ebj" secondAttribute="bottom" constant="20" id="FvQ-t0-Uxy"/>
-                <constraint firstItem="4Lm-fm-ebj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="IH9-mf-zuv"/>
+                <constraint firstItem="4Lm-fm-ebj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" priority="900" constant="40" id="IH9-mf-zuv"/>
                 <constraint firstItem="vAP-2b-B9v" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LX8-0V-Ejj"/>
                 <constraint firstAttribute="trailing" secondItem="vAP-2b-B9v" secondAttribute="trailing" id="Vsw-nC-bHy"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i6j-iI-02e"/>
