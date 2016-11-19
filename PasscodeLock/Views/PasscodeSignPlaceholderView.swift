@@ -8,9 +8,8 @@
 
 import UIKit
 
-@IBDesignable
 open class PasscodeSignPlaceholderView: UIView {
-    
+
     public enum State {
         case inactive
         case active

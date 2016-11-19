@@ -8,8 +8,12 @@
 
 import UIKit
 
+<<<<<<< HEAD
 @IBDesignable
 open class PasscodeSignButton: UIButton {
+=======
+public class PasscodeSignButton: UIButton {
+>>>>>>> master
     
     @IBInspectable
     open var passcodeSign: String = "1"
@@ -22,7 +26,11 @@ open class PasscodeSignButton: UIButton {
     }
     
     @IBInspectable
+<<<<<<< HEAD
     open var borderRadius: CGFloat = 30 {
+=======
+    public var borderRadius: CGFloat = 35 {
+>>>>>>> master
         didSet {
             setupView()
         }
@@ -51,8 +59,8 @@ open class PasscodeSignButton: UIButton {
     }
     
     open override var intrinsicContentSize: CGSize {
-        
-        return CGSize(width: 60, height: 60)
+
+        return CGSizeMake(70, 70)
     }
     
     fileprivate var defaultBackgroundColor = UIColor.clear
