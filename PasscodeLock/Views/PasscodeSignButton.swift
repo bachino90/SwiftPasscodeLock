@@ -8,27 +8,27 @@
 
 import UIKit
 
-open class PasscodeSignButton: UIButton {
+public class PasscodeSignButton: UIButton {
 
     @IBInspectable
-    open var passcodeSign: String = "1"
+    public var passcodeSign: String = "1"
     
     @IBInspectable
-    open var borderColor: UIColor = UIColor.white {
+    public var borderColor: UIColor = UIColor.white {
         didSet {
             setupView()
         }
     }
     
     @IBInspectable
-    open var borderRadius: CGFloat = 35 {
+    public var borderRadius: CGFloat = 35 {
         didSet {
             setupView()
         }
     }
     
     @IBInspectable
-    open var highlightBackgroundColor: UIColor = UIColor.clear {
+    public var highlightBackgroundColor: UIColor = UIColor.clear {
         didSet {
             setupView()
         }
@@ -49,7 +49,7 @@ open class PasscodeSignButton: UIButton {
         setupActions()
     }
     
-    open override var intrinsicContentSize: CGSize {
+    public override var intrinsicContentSize: CGSize {
 
         return CGSize(width: 70, height: 70)
     }
