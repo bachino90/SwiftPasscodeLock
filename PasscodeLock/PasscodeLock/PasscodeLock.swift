@@ -9,20 +9,20 @@
 import Foundation
 import LocalAuthentication
 
-public class PasscodeLock: PasscodeLockType {
+open class PasscodeLock: PasscodeLockType {
     
-    public weak var delegate: PasscodeLockTypeDelegate?
-    public let configuration: PasscodeLockConfigurationType
+    open weak var delegate: PasscodeLockTypeDelegate?
+    open let configuration: PasscodeLockConfigurationType
     
-    public var repository: PasscodeRepositoryType {
+    open var repository: PasscodeRepositoryType {
         return configuration.repository
     }
     
-    public var state: PasscodeLockStateType {
+    open var state: PasscodeLockStateType {
         return lockState
     }
     
-    public var isTouchIDAllowed: Bool {
+    open var isTouchIDAllowed: Bool {
         return isTouchIDEnabled() && configuration.isTouchIDAllowed && lockState.isTouchIDAllowed
     }
     
@@ -37,7 +37,7 @@ public class PasscodeLock: PasscodeLockType {
         self.configuration = configuration
     }
     
-    public func addSign(_ sign: String) {
+    open func addSign(_ sign: String) {
         
         passcode.append(sign)
         delegate?.passcodeLock(self, addedSignAtIndex: passcode.count - 1)
@@ -49,7 +49,7 @@ public class PasscodeLock: PasscodeLockType {
         }
     }
     
-    public func removeSign() {
+    open func removeSign() {
         
         guard passcode.count > 0 else { return }
         
@@ -57,13 +57,13 @@ public class PasscodeLock: PasscodeLockType {
         delegate?.passcodeLock(self, removedSignAtIndex: passcode.count)
     }
     
-    public func changeStateTo(_ state: PasscodeLockStateType) {
+    open func changeStateTo(_ state: PasscodeLockStateType) {
         
         lockState = state
         delegate?.passcodeLockDidChangeState(self)
     }
     
-    public func authenticateWithBiometrics() {
+    open func authenticateWithBiometrics() {
         
         guard isTouchIDAllowed else { return }
         

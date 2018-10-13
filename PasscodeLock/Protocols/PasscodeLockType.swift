@@ -10,7 +10,7 @@ import Foundation
 
 public protocol PasscodeLockType {
     
-    var delegate: PasscodeLockTypeDelegate? {get set}
+    weak var delegate: PasscodeLockTypeDelegate? {get set}
     var configuration: PasscodeLockConfigurationType {get}
     var repository: PasscodeRepositoryType {get}
     var state: PasscodeLockStateType {get}

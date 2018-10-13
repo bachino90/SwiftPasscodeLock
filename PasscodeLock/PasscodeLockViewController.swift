@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegate {
+open class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegate {
     
     public enum LockState {
         case enterPasscode
@@ -27,18 +27,18 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         }
     }
     
-    @IBOutlet public weak var titleLabel: UILabel?
-    @IBOutlet public weak var descriptionLabel: UILabel?
-    @IBOutlet public var placeholders: [PasscodeSignPlaceholderView] = [PasscodeSignPlaceholderView]()
-    @IBOutlet public weak var cancelButton: UIButton?
-    @IBOutlet public weak var deleteSignButton: UIButton?
-    @IBOutlet public weak var touchIDButton: UIButton?
-    @IBOutlet public weak var placeholdersX: NSLayoutConstraint?
+    @IBOutlet open weak var titleLabel: UILabel?
+    @IBOutlet open weak var descriptionLabel: UILabel?
+    @IBOutlet open var placeholders: [PasscodeSignPlaceholderView] = [PasscodeSignPlaceholderView]()
+    @IBOutlet open weak var cancelButton: UIButton?
+    @IBOutlet open weak var deleteSignButton: UIButton?
+    @IBOutlet open weak var touchIDButton: UIButton?
+    @IBOutlet open weak var placeholdersX: NSLayoutConstraint?
     
-    public var successCallback: ((_ lock: PasscodeLockType) -> Void)?
-    public var dismissCompletionCallback: (()->Void)?
-    public var animateOnDismiss: Bool
-    public var notificationCenter: NotificationCenter?
+    open var successCallback: ((_ lock: PasscodeLockType) -> Void)?
+    open var dismissCompletionCallback: (()->Void)?
+    open var animateOnDismiss: Bool
+    open var notificationCenter: NotificationCenter?
     
     internal let passcodeConfiguration: PasscodeLockConfigurationType
     internal var passcodeLock: PasscodeLockType
@@ -80,7 +80,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     
     // MARK: - View
     
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
         
         updatePasscodeView()
@@ -89,7 +89,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         setupEvents()
     }
     
-    public override func viewDidAppear(_ animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if shouldTryToAuthenticateWithBiometrics {
@@ -122,12 +122,12 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         notificationCenter?.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     
-    @objc public func appWillEnterForegroundHandler(_ notification: Notification) {
+    @objc open func appWillEnterForegroundHandler(_ notification: Notification) {
 
         authenticateWithBiometrics()
     }
     
-    @objc public func appDidEnterBackgroundHandler(_ notification: Notification) {
+    @objc open func appDidEnterBackgroundHandler(_ notification: Notification) {
         
         shouldTryToAuthenticateWithBiometrics = false
     }
@@ -236,7 +236,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
 
     // MARK: - PasscodeLockDelegate
     
-    public func passcodeLockDidSucceed(_ lock: PasscodeLockType) {
+    open func passcodeLockDidSucceed(_ lock: PasscodeLockType) {
         
         deleteSignButton?.isEnabled = true
         animatePlaceholders(placeholders, toState: .inactive)
@@ -245,25 +245,25 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
         })
     }
     
-    public func passcodeLockDidFail(_ lock: PasscodeLockType) {
+    open func passcodeLockDidFail(_ lock: PasscodeLockType) {
         
         animateWrongPassword()
     }
     
-    public func passcodeLockDidChangeState(_ lock: PasscodeLockType) {
+    open func passcodeLockDidChangeState(_ lock: PasscodeLockType) {
         
         updatePasscodeView()
         animatePlaceholders(placeholders, toState: .inactive)
         deleteSignButton?.isEnabled = false
     }
     
-    public func passcodeLock(_ lock: PasscodeLockType, addedSignAtIndex index: Int) {
+    open func passcodeLock(_ lock: PasscodeLockType, addedSignAtIndex index: Int) {
         
         animatePlacehodlerAtIndex(index, toState: .active)
         deleteSignButton?.isEnabled = true
     }
     
-    public func passcodeLock(_ lock: PasscodeLockType, removedSignAtIndex index: Int) {
+    open func passcodeLock(_ lock: PasscodeLockType, removedSignAtIndex index: Int) {
         
         animatePlacehodlerAtIndex(index, toState: .inactive)
         
