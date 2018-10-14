@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return presenter
     }()
     
-    public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+    public func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         passcodeLockPresenter.presentPasscodeLock()
         
