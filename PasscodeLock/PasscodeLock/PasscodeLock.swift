@@ -43,8 +43,58 @@ open class PasscodeLock: PasscodeLockType {
         delegate?.passcodeLock(self, addedSignAtIndex: passcode.count - 1)
         
         if passcode.count >= configuration.passcodeLength {
+            if lockState is SetPasscodeState {
+                let nextState = ConfirmPasscodeState(passcode: passcode)
+                changeStateTo(nextState)
+            } else if let lockState = lockState as? ConfirmPasscodeState {
+                if lockState.validate(passcode) {
+                    
+                    repository.savePasscode(passcode)
+                    delegate?.passcodeLockDidSucceed(self)
+                    
+                } else {
+                    
+                    let mismatchTitle = localizedStringFor("PasscodeLockMismatchTitle", comment: "Passcode mismatch title")
+                    let mismatchDescription = localizedStringFor("PasscodeLockMismatchDescription", comment: "Passcode mismatch description")
+                    
+                    let nextState = SetPasscodeState(title: mismatchTitle, description: mismatchDescription)
+                    
+                    changeStateTo(nextState)
+                    delegate?.passcodeLockDidFail(self)
+                }
+            } else if let currentPasscode = repository.passcode, lockState is ChangePasscodeState {
+        
+                if passcode == currentPasscode {
+                    
+                    let nextState = SetPasscodeState()
+                    
+                    changeStateTo(nextState)
+                    
+                } else {
+                    
+                    delegate?.passcodeLockDidFail(self)
+                }
+            } else if let currentPasscode = repository.passcode, lockState is EnterPasscodeState {
+                
+                var enterState = lockState as! EnterPasscodeState
+                
+                if passcode == currentPasscode {
+                    
+                    delegate?.passcodeLockDidSucceed(self)
+                    
+                } else {
+                    
+                    enterState.inccorectPasscodeAttempts += 1
+                    
+                    if enterState.inccorectPasscodeAttempts >= configuration.maximumInccorectPasscodeAttempts {
+                        
+                        enterState.postNotification()
+                    }
+                    
+                    delegate?.passcodeLockDidFail(self)
+                }
+            }
             
-            lockState.acceptPasscode(passcode, fromLock: self)
             passcode.removeAll(keepingCapacity: true)
         }
     }

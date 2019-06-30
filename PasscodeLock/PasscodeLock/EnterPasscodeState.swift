@@ -17,7 +17,7 @@ struct EnterPasscodeState: PasscodeLockStateType {
     let isCancellableAction: Bool
     var isTouchIDAllowed = true
     
-    fileprivate var inccorectPasscodeAttempts = 0
+    var inccorectPasscodeAttempts = 0
     fileprivate var isNotificationSent = false
     
     init(allowCancellation: Bool = false) {
@@ -50,7 +50,7 @@ struct EnterPasscodeState: PasscodeLockStateType {
         }
     }
     
-    fileprivate mutating func postNotification() {
+    mutating func postNotification() {
         
         guard !isNotificationSent else { return }
             

@@ -24,6 +24,10 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
         description = localizedStringFor("PasscodeLockConfirmDescription", comment: "Confirm passcode description")
     }
     
+    func validate(_ passcode: [String]) -> Bool {
+        return passcode == passcodeToConfirm
+    }
+    
     func acceptPasscode(_ passcode: [String], fromLock lock: PasscodeLockType) {
         
         if passcode == passcodeToConfirm {
